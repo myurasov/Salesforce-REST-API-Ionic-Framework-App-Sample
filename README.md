@@ -67,7 +67,7 @@ Let's dig into the code to see what's actually happening here.
 
 First of all let's take a loot at __www/js/services.js__:
 
-```
+```js
 // auth service
 app.factory('auth', function ($window, salesforce_client_id) {
 
@@ -107,7 +107,7 @@ We see the __auth__ service defined. It has methods to read/store/delete login i
 
 Now knowing about what __auth__ service is we can understand the following piece of code in __www/js/app.js__:
 
-```
+```js
   ...
   // check auth data
   .run(function ($ionicPlatform, auth) {
@@ -123,7 +123,7 @@ Now knowing about what __auth__ service is we can understand the following piece
 
 It basically checks whether we have an auth token and if not – opens Salesforce login dialog. When user is done with login browser is redirected to `redirect_uri` parameter passed initially to Salesforce OAuth server. In our case it is `sfsampleapp://oauth-callback` – custom url scheme that our app is registered to handle. When app is invoked with this custom url scheme the global `handleOpenURL()` function is executed:
 
-```
+```js
 // handle custom url scheme
 function handleOpenURL(url) {
 
@@ -182,7 +182,7 @@ Now when we have access token the rest is done with CRUD operations on a _Postio
 
 Creation of the new _Postion_ object with __POST__ method on collection:
 	
-```
+```js
 $.ajax({
   url: authData.instance_url + '/services/data/v29.0/sobjects/Position__c',
   type: 'POST',
@@ -196,7 +196,7 @@ $.ajax({
 
 Update with __PATCH__ method on resource:
 
-```
+```js
 $.ajax({
   url: authData.instance_url + '/services/data/v29.0/sobjects/Position__c/' + $rootScope.positionObjectId,
   type: 'PATCH',
@@ -211,7 +211,7 @@ $.ajax({
 And finally we use __GET__ method to retrieve stored positions in __HistroryController__:
 
 
-```
+```js
 $.ajax({
   url: authData.instance_url + '/services/data/v29.0/sobjects/Position__c/' + $rootScope.positionObjectId,
   type: 'GET',
