@@ -14,7 +14,7 @@ In this tutorial we will create an app using Ionic framework ([http://ionicframe
 
 First of all you need to create a Connected app on Force.com.
 
-- Go to [https://developer.salesforce.com/](https://developer.salesforce.com/), sign up and navigate to your develope account.
+- Go to [https://developer.salesforce.com/](https://developer.salesforce.com/), sign up and navigate to your developer account.
 - In the side menu choose Create > Apps and create new Connected App.
 - Name it "SF Sample 1", enter your email and check "Enable OAuth Settings"
 - Enter `sfsampleapp://oaut-callback` as your Callback URL.
@@ -23,7 +23,7 @@ First of all you need to create a Connected app on Force.com.
 
 	![image](1.png)
 
-You may heve noticed we're using custom URL scheme for the callback. Our app is registerd in the system as the one that opens this type of URLs so we get a callback when user is done with the login process on the Salesforce web site.
+You may heve noticed we're using custom URL scheme for the callback. Our app is registered in the system as the one that opens this type of URLs so we get a callback when user is done with the login process on the Salesforce web site.
 
 We're going to use a custom object for storing location data in the Salesforce cloud. So we need to create one:
 
@@ -38,7 +38,7 @@ Now we need to install Ionic CLI tools. Since Ionic is built on top of Apache Co
 - Create a new tabbed app: `ionic start "SF Sample" tabs`
 - Enter the created app directory: `cd SF\ Sample`
 
-Go to [https://github.com/myurasov/Salesforce-REST-API-Ionic-framework-app-sample](https://github.com/myurasov/Salesforce-REST-API-Ionic-framework-app-sample) and copy all files from the repostory to the current folder.
+Go to [https://github.com/myurasov/Salesforce-REST-API-Ionic-framework-app-sample](https://github.com/myurasov/Salesforce-REST-API-Ionic-framework-app-sample) and copy all files from the repository to the current folder.
 
 App uses few of Cordova plugins:
 
@@ -60,7 +60,7 @@ At this point you should be able to launch your app. Run the following commands 
 	ionic build ios
 	ionic emulate ios
 	
-You should see app loading and immideately opening Salesforce login page. After entering your login credentials and pressing "Log in to Salesforce" app is automatically opened ready to be used:
+You should see app loading and immediately opening Salesforce login page. After entering your login credentials and pressing "Log in to Salesforce" app is automatically opened ready to be used:
 	![image](2_3.png)
 	
 Let's dig into the code to see what's actually happening here.
@@ -172,15 +172,15 @@ sfsampleapp://oauth-callback
 
 Here are meaning of some passed params:
 
-- __access_token__ - temporary token that serves for authorizing acces to Salesforce APIs
+- __access_token__ - temporary token that serves for authorizing access to Salesforce APIs
 - __instance_url__ - API endpoint that should be used by our application
 - __issued_at__ - Unix timestamp of the token creation date
 
 Authentication params are parsed into JavaScript object and then using `$scope.$apply()` and __LoginController__ passed to __auth__ service to be saved.
 
-Now when we have access token the rest is done with CRUD operations on a _Postion_ resource in __www/js/controlles.js__.
+Now when we have access token the rest is done with CRUD operations on a _Position_ resource in __www/js/controlles.js__.
 
-Creation of the new _Postion_ object with __POST__ method on collection:
+Creation of the new _Position_ object with __POST__ method on collection:
 	
 ```js
 $.ajax({
@@ -226,11 +226,11 @@ $.ajax({
 
 ## Conclusion
 
-We have created an app utilizing Salesforce in a flexible way without using any SDKs or libraries, but using only open standarts - OAuth protocol and RESTful APIs. The same approach can be easily ported to virtually any enviroment making it attractive in modern multi-platform enviroment.
+We have created an app utilizing Salesforce in a flexible way without using any SDKs or libraries, but using only open standards - OAuth protocol and RESTful APIs. The same approach can be easily ported to virtually any environment making it attractive in modern multi-platform environment.
 
 ## About the Author
 
-I am a fullstack mobile/web/connected devices developer specializing in leading projects from the idea to the finished project. Feel free to contact me at <me@yurasov.me> for any comments and questions or visit my:
+I am a full-stack mobile/web/connected devices developer specializing in leading projects from the idea to the full implementation. Feel free to contact me at <me@yurasov.me> for any comments and questions or visit my:
 
 - [LinkedIn](https://www.linkedin.com/profile/view?id=173007295)
 - [GitHub](https://github.com/myurasov)
