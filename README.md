@@ -1,5 +1,4 @@
-# Creating geo tracking app with Salesforce REST API and Ionic Framework
-
+# Creating location tracking app with Salesforce REST API and Ionic Framework
 
 * Creating Salesforce Connected App
 * Adding custom SObject
