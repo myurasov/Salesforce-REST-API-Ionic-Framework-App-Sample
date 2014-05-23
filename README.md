@@ -1,15 +1,21 @@
 # Creating location tracking app with Salesforce REST API and Ionic Framework
 
-* Creating Salesforce Connected App
-* Adding custom SObject
-* Installing Ionic framework
-* Creating Ionic app, installing required Cordova plugins
-* Getting authentication token through OAuth2 flow
-* Creating new "Position" object
-* Starting geolocation and logging position to server
-* Retrieving position history from server and displaying it
+In this tutorial we will create an app using Ionic framework ([http://ionicframework.com](http://ionicframework.com)), AngularJS ([https://angularjs.org/](https://angularjs.org/)), Apache Cordova ([http://cordova.apache.org/](http://cordova.apache.org/)) and [Salesforce](http://salesforce.com) REST API.
 
-In this tutorial we will create an app using Ionic framework ([http://ionicframework.com](http://ionicframework.com)), AngularJS, Apache Cordova and Salesforce REST API.
+Ionic framnework offers a library of mobile-optimized HTML, CSS and JS components for building highly interactive corss-platfotm mobile apps. It is built on top of Apache Cordova and optimized for AngularJS this giving your application the clear structre and usage of best practices.
+
+REST APIs are accessible form any environment that can send an HTTP request. In many ways it's the most flexible way to communicate to Salesforce platform and gives you the ability to fully control your data flow.
+
+We will go through the following steps:
+
+* Step 1. Creating Salesforce Connected App
+* Step 2. Adding custom SObject
+* Step 3. Installing Ionic framework
+* Step 4. Creating Ionic app, installing required Cordova plugins
+* Step 5. Getting authentication token through OAuth2 flow
+* Step 6. Creating new "Position" object
+* Step 7. Starting geolocation and logging position to server
+* Step 8. Retrieving position history from server and displaying it
 
 First of all you need to create a Connected app on Force.com.
 
@@ -31,7 +37,7 @@ We're going to use a custom object for storing location data in the Salesforce c
 - Enter "Position" as object label, "Positions" as plural label. "Position__c" will be automatically assigned as an API name for our object. We'll use this name for call to REST API.
 - Leave other setting to default and hit Save
 
-Now we need to install Ionic CLI tools. Since Ionic is built on top of Apache Cordova, we need to install it too. Assuming you already have nodejs and npm on your system, run the following commands in your terminal:
+Now we need to install Ionic CLI tools. Since Ionic is built on top of Apache Cordova, we need to install it too. Assuming you already have nodejs and npm on your system ([here](http://howtonode.org/how-to-install-nodejs) is an instruction how to istall them if you don't), run the following commands in your terminal:
 
 - Install Cordova and Ionic CLI: `npm install -g cordova ionic`
 - Create a new tabbed app: `ionic start "SF Sample" tabs`
