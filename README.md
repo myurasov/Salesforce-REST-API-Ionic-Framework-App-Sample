@@ -22,7 +22,7 @@ First of all you need to create a Connected app on Force.com.
 - Go to [https://developer.salesforce.com/](https://developer.salesforce.com/), sign up and navigate to your developer account.
 - In the side menu choose Create > Apps and create new Connected App.
 - Name it "SF Sample 1", enter your email and check "Enable OAuth Settings"
-- Enter `sfsampleapp://oaut-callback` as your Callback URL.
+- Enter `sfsampleapp://oauth-callback` as your Callback URL.
 - Add "Full access" to Selected OAuth Scopes
 - Save Connected App
 
